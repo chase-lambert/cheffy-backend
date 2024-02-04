@@ -8,4 +8,4 @@ RUN clojure -T:build uber
 
 EXPOSE $PORT
 
-ENTRYPOINT exec java $JAVA_OPTS -jar target/cheffy-backend.jar
+ENTRYPOINT exec java $JAVA_OPTS -cp target/cheffy-backend.jar clojure.main -m cheffy-backend.server "resources/config.edn"
